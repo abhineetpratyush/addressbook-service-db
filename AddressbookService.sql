@@ -68,5 +68,8 @@ update addressbook set addressbook_type = 'Family' where first_name =  'Ram';
 
 update addressbook set addressbook_name = 'Home' where first_name =  'Ram';
 
+# Get number of contact persons by type
+
+select addressbook_type, count(*) from addressbook group by addressbook_type;
 
 
