@@ -44,3 +44,8 @@ delete from addressbook where first_name = 'Ram' and last_name = 'Kumar';
 
 select * from addressbook where city = 'Bangalore' or state = 'Eurasia';
 
+# Size of addressbook by city or state
+
+select city, count(*) from addressbook group by city;
+
+select state, count(*) from addressbook group by state;
