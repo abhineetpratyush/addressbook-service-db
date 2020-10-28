@@ -49,3 +49,7 @@ select * from addressbook where city = 'Bangalore' or state = 'Eurasia';
 select city, count(*) from addressbook group by city;
 
 select state, count(*) from addressbook group by state;
+
+# Retrieve entries sorted alphabetically by person's name for a given city
+
+select * from addressbook where city = 'Bangalore' order by first_name;
