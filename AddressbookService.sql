@@ -34,6 +34,8 @@ values
 # Edit existing contact using their name
 
 update addressbook
-set city = 'Gangtok' where name = 'Ram';
+set city = 'Gangtok' where first_name = 'Ram' and last_name = 'Kumar';
 
+# Delete record using person's name
 
+delete from addressbook where first_name = 'Ram' and last_name = 'Kumar';
