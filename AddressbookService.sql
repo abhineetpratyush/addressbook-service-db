@@ -31,4 +31,9 @@ values
 ('Abhineet', 'Pratyush', 'D-108', 'Bangalore', 'Karnataka', 123456, 1234567891, 'abc@zy.com'),
 ('Ram', 'Kumar', 'X-989', 'Tumbaktu' ,'Eurasia', 456789, 7894561235, 'ram@hello.com');
 
+# Edit existing contact using their name
+
+update addressbook
+set city = 'Gangtok' where name = 'Ram';
+
 
