@@ -72,4 +72,10 @@ update addressbook set addressbook_name = 'Home' where first_name =  'Ram';
 
 select addressbook_type, count(*) from addressbook group by addressbook_type;
 
+# Ability to add persons to both friend and family
 
+insert into addressbook
+(first_name, last_name, address, city, state, zip, phone_number, email_id, addressbook_name, addressbook_type)
+values
+('Varun', 'Sharma', 'Y-108', 'Vadadora', 'Gujarat', 123446, 1234557891, 'abc@zt.com', 'School Friends', 'Friends'),
+('Shyam', 'Rana', 'Z-989', 'Mysuru' ,'Karnataka', 356789, 7894561234, 'shyam@hello.com', 'Relatives', 'Family');
