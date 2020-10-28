@@ -39,3 +39,8 @@ set city = 'Gangtok' where first_name = 'Ram' and last_name = 'Kumar';
 # Delete record using person's name
 
 delete from addressbook where first_name = 'Ram' and last_name = 'Kumar';
+
+# Ability to retrieve person belonging from a city or state
+
+select * from addressbook where city = 'Bangalore' or state = 'Eurasia';
+
