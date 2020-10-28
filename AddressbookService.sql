@@ -22,3 +22,13 @@ create table addressbook
    email_id    	 varchar(100) not null,
    primary key   (email_id)
 );
+
+# Insert new contacts to address book
+
+insert into addressbook
+(first_name, last_name, address, city, state, zip, phone_number, email_id)
+values
+('Abhineet', 'Pratyush', 'D-108', 'Bangalore', 'Karnataka', 123456, 1234567891, 'abc@zy.com'),
+('Ram', 'Kumar', 'X-989', 'Tumbaktu' ,'Eurasia', 456789, 7894561235, 'ram@hello.com');
+
+
