@@ -53,3 +53,20 @@ select state, count(*) from addressbook group by state;
 # Retrieve entries sorted alphabetically by person's name for a given city
 
 select * from addressbook where city = 'Bangalore' order by first_name;
+
+# Alter addressbook to add fields name and type
+
+alter table addressbook add addressbook_name varchar(20) after email_id;
+
+alter table addressbook add addressbook_type varchar(20) after addressbook_name;
+
+update addressbook set addressbook_type = 'Friends' where first_name =  'Abhineet';
+
+update addressbook set addressbook_name = 'College Friends' where first_name = 'Abhineet';
+
+update addressbook set addressbook_type = 'Family' where first_name =  'Ram';
+
+update addressbook set addressbook_name = 'Home' where first_name =  'Ram';
+
+
+
