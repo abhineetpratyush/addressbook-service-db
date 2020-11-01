@@ -142,3 +142,20 @@ values
 ('a34c@zy.com', 'School Friends'),
 ('abc@zu.com', 'Relatives'),
 ('afdf_c@xy.com', 'College Friends');
+
+# Repeating queries to check if they work after normalization
+
+select * from address_details inner join address_details_addressbook_name on address_details.email_id = address_details_addressbook_name.email_id inner join addressbook_name on address_details_addressbook_name.addressbook_name = addressbook_name.addressbook_name;
+
+select * from address_details where city = 'Bnglr' or state = 'France';
+
+select city, count(*) from address_details group by city;
+
+select state, count(*) from address_details group by state;
+
+update address_details
+set city = 'Bnglr' where first_name = 'Ram';
+
+select * from address_details where city = 'Bnglr' order by first_name;
+
+select addressbook_name.addressbook_type, count(address_details.email_id) from address_details inner join address_details_addressbook_name on address_details email_id = address_details_addressbook_name.email_id inner join addressbook_name on address_details_addressbook_name.addressbook_name = addressbook_name.addressbook_name group by addressbook_type;
