@@ -79,3 +79,66 @@ insert into addressbook
 values
 ('Varun', 'Sharma', 'Y-108', 'Vadadora', 'Gujarat', 123446, 1234557891, 'abc@zt.com', 'School Friends', 'Friends'),
 ('Shyam', 'Rana', 'Z-989', 'Mysuru' ,'Karnataka', 356789, 7894561234, 'shyam@hello.com', 'Relatives', 'Family');
+
+# Normalize the database according to the ER diagram
+
+ create table address_details
+(
+    email_id varchar(100) not null,
+    first_name varchar(150) not null,
+	last_name varchar(150) not null,
+    address varchar(400),
+    city varchar(20),
+    state varchar(20),
+	zip int unsigned,
+    phone_number int unsigned,
+    primary key(email_id)  
+);
+
+ create table addressbook_type
+ (
+   type varchar(50) not null,
+   primary key(type)
+);
+
+alter table addressbook_type rename column type to addressbook_type;
+
+create table addressbook_name
+(
+addressbook_name varchar(50) not null,
+addressbook_type varchar(50) not null,
+primary key (addressbook_name),
+foreign key(addressbook_type) references addressbook_type(addressbook_type)
+);
+
+create table address_details_addressbook_name
+(
+email_id varchar(100) not null,
+addressbook_name varchar(50) not null,
+foreign key(email_id) references address_details(email_id),
+foreign key(addressbook_name) references addressbook_name(addressbook_name)
+);
+
+insert into address_details
+values
+('abc@zu.com', 'Abhineet', 'Pratyush', 'D-109', 'Bnglr', 'Karnataka', 123345, 274235467),
+('a34c@zy.com', 'Ram', 'Sagar', 'E-109', 'Vadadora', 'Gujarat', 123345, 3742354537),
+('afdf_c@xy.com', 'Birla', 'Nagar', '6-D Rose', 'Venice', 'France', 123345, 373454537);
+
+insert into addressbook_type
+values
+('Family'),
+'Friends');
+
+insert into addressbook_name
+values
+('College Friends', 'Friends'),
+('Home', 'Family'),
+('School Friends', 'Friends'),
+('Relatives', 'Family');
+
+insert into address_details_addressbook_name
+values
+('a34c@zy.com', 'School Friends'),
+('abc@zu.com', 'Relatives'),
+('afdf_c@xy.com', 'College Friends');
